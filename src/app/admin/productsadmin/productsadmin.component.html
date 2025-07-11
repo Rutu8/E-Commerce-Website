@@ -1,0 +1,45 @@
+<div class="col-lg-12">
+  <div class="row">
+    <h1 class="text-center">Admin Page</h1>
+    <div class="container mt-5" *ngIf="data">
+      <!-- <div class="col-lg-6"> -->
+        <!-- <ol >
+          <li>{{data}}</li>
+        </ol> -->
+
+      <!-- </div> -->
+       <!-- <a routerLink="/productlist/:id"><button class="btn btn-primary">Go to add products</button></a> -->
+      <div class="col-lg-12">
+        <table class="table table-bordered table-stripped table-responsive">
+          <tr>
+            <th>Sr.No</th>
+            <th>id</th>
+            <th>Title</th>
+            <th>Image</th>
+            <th>Price</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+          <tr *ngFor="let items of data,let i=index ">
+            <td>{{i+1}}</td>  
+            <td>{{items.id}}</td>
+            <td>{{items.Title}}</td>
+           <td><img src="{{items.image}}" alt="products" style="width: 50%; height: 100%;"></td>
+            <td>{{items.price | currency:'INR'}}</td>
+            <td><a routerLink="/admin/productlist/{{items.id}}"><button class="btn btn-outline-warning btn-sm" (click)="editdata()">Edit</button></a></td>
+            <td><a><button class="btn btn-outline-danger btn-sm" (click)="delete(items.id)">Delete</button></a></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <!-- <a routerLink="/productlist" class="btn btn-primary"></a> -->
+  </div>
+</div>
+<!-- <app-poductlist></app-poductlist> -->
+<!-- <app-poductlist></app-poductlist> -->
+ <!-- <div class="container ms-1000">
+ <div class="col-lg-12 float-right ms-10">
+ <span class="btn btn-danger d-mx-auto" (click)="logout()">Log Out</span> -->
+<!-- </div>
+</div> -->
+<router-outlet></router-outlet>

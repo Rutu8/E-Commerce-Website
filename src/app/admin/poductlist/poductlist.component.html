@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="col-lg-12">
+  <h1>Add Products</h1>
+  <!-- {{formData.value|json}} -->
+  <form [formGroup]="formData" (ngSubmit)="adddata(formData.value)">
+    <label for="id">ID:</label>
+    <input type="text" formControlName="id" [readonly]="true">
+
+    <label for="Title">Title:</label>
+    <input type="text" class="form-control m-2" placeholder="Enter a Title" formControlName="Title"><br><br>
+
+    <label for="image">Image:</label>
+    <input type="url" class="form-control" placeholder="Enter an image URL" formControlName="image"><br><br>
+
+    <label for="price">Price:</label>
+    <input type="number" class="form-control m-2" placeholder="Enter a price" formControlName="price"><br><br>
+
+    <button type="submit" class="btn btn-primary">Add</button>
+  </form>
+</div>
+
+
+</div>

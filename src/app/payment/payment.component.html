@@ -1,0 +1,192 @@
+
+<div class="colorlib-product">
+  <div class="container">
+      <div class="row row-pb-lg">
+      <div class="col-sm-10 offset-md-1">
+        <div class="process-wrap">
+          <div class="process text-center active">
+            <p><span>01</span></p>
+            <h3>Shopping Cart</h3>
+          </div>
+          <div class="process text-center active">
+            <p><span>02</span></p>
+            <h3>Checkout</h3>
+          </div>
+          <div class="process text-center">
+            <p><span>03</span></p>
+            <h3>Order Complete</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-8">
+        <form class="colorlib-form" [formGroup]="formData" (ngSubmit)="gotoAdmin(formData.value)">
+          <h2>Billing Details</h2>
+                <div class="row">
+
+                 <!-- <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="country">Select Country</label>
+                       <div class="form-field">
+                         <i class="icon icon-arrow-down3"></i>
+                          <select name="people" id="people" class="form-control" formControlName="country">
+                            <option value="#">Select country</option>
+                            <option value="#">India</option>
+                            <option value="#">Alaska</option>
+                            <option value="#">China</option>
+                            <option value="#">Japan</option>
+                            <option value="#">Korea</option>
+                            <option value="#">Philippines</option>
+
+                          </select>
+                       </div>
+                    </div>
+                 </div> -->
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>First Name</label>
+                <input type="text" class="form-control" placeholder="Your firstname" formControlName="fname">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" class="form-control" placeholder="Your lastname" formControlName="lname">
+              </div>
+            </div>
+               <div class="col-md-12">
+              <div class="form-group">
+                <label>Address</label>
+                        <input type="text" class="form-control" placeholder="Enter Your Address" formControlName="address">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Second Address" formControlName="secondaddress">
+                    </div>
+                 </div>
+
+                 <div class="col-md-12">
+              <div class="form-group">
+                <label>Town/City</label>
+                        <input type="text"class="form-control" placeholder="Town or City" formControlName="city">
+                    </div>
+                 </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>State/Province</label>
+                <input type="text" class="form-control" placeholder="State Province" formControlName="state">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Zip/Postal Code</label>
+                <input type="text" class="form-control" placeholder="Zip / Postal" formControlName="postalcode">
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>E-mail Address</label>
+                <input type="text" class="form-control" placeholder="State Province" formControlName="email">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Phone Number</label>
+                <input type="text" class="form-control" placeholder="" formControlName="mobileno">
+              </div>
+            </div>
+
+            <!-- <div class="col-md-12">
+              <div class="form-group">
+                <div class="radio">
+                  <label><input type="radio" name="optradio"> Create an Account? </label>
+                  <label><input type="radio" name="optradio"> Ship to different address</label>
+                </div>
+              </div>
+            </div> -->
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>Write a Message:</label>
+                <textarea class="form-control" placeholder="Message" formControlName="message"></textarea>
+                    </div>
+                 </div>
+               </div>
+            </form>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="row">
+          <div class="col-md-12">
+          <h2>Cart Total</h2>
+
+            <div class="cart-detail" *ngFor="let items of record">
+              <ul>
+                <li>
+                  <ul>
+                    <li><span>1 x {{items.productname}}</span> <span>{{items.price | currency:'INR'}}</span></li>
+                    <li><span>1 x {{items.productname}}</span> <span>{{items.price | currency:'INR'}}</span></li>
+                  </ul>
+                </li>
+                <li><span>Shipping</span> <span>{{shipping | currency:'INR'}}</span></li>
+
+                <!--Here we want to add Total price-->
+                <li><span>Order Total</span> <span>{{totalprice | currency:'INR'}}</span></li>
+              </ul>
+                  <!--Here we want all Total including shipping Currency-->
+            <span>Subtotal</span> <span>{{TotalOrder | currency:'INR'}}</span>
+
+            </div>
+
+           </div>
+
+           <div class="w-100"></div>
+
+           <div class="col-md-12">
+            <div class="cart-detail">
+              <h2>Payment Method</h2>
+              <div class="form-group">
+                <div class="col-md-12">
+                  <div class="radio">
+                     <label><input type="radio" name="optradio"> Direct Bank Tranfer</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-md-12">
+                  <div class="radio">
+                     <label><input type="radio" name="optradio"> Check Payment</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-md-12">
+                  <div class="radio">
+                     <label><input type="radio" name="optradio"> Paypal</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-md-12">
+                  <div class="checkbox">
+                     <label><input type="checkbox" value=""> I have read and accept the terms and conditions</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+
+    <p><button type="submit" (click)=" gotoAdmin(formData.value)" class="btn btn-primary" id="btnsubmint">Place an order</button></p>
+            <p><a routerLink="/cart"  class="btn btn-info">Go to the cart</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{formData.value | json}}

@@ -1,0 +1,40 @@
+<div class="row row-pb-lg" *ngIf="record">
+  <div class="col-md-12">
+    <div class="product-name d-flex">
+      <!-- <div class="one-forth text-left px-4"> -->
+        <span class="text-center d-mx-auto">Product Details</span>
+      </div>
+      <table class="table table-bordered table-responsive">
+        <tr>
+          <th>Sr no.</th>
+          <th>Id of product</th>
+          <th>Name of the product</th>
+          <th>Image</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Remove Item</th>
+
+        </tr>
+        <tr *ngFor="let outcome of record, let i = index">
+          <td>{{i+1}}</td>
+          <td>{{outcome.id}}</td>
+          <td>{{outcome.productname}}</td>
+          <td><img src="{{outcome.productimage}}" alt="product" class="img-fluid" style="width: 20%; height: auto;"></td>
+          <td>{{outcome.quantity}}</td>
+          <td>{{outcome.price}}</td>
+          <td><button (click)="removeItem(outcome.id)" class="btn btn-danger">X</button></td>
+        </tr>
+      </table>
+
+      <a routerLink="/payment">
+        <button (click)="gotopayment()" class="btn btn-primary">Proceed to payment</button>
+      </a>
+
+      </div>
+
+
+
+
+    </div>
+  <!-- </div> -->
+

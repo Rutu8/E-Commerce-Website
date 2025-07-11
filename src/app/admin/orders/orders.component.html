@@ -1,0 +1,36 @@
+<!-- <div class="row row-pb-lg" *ngIf="userdata">
+  <div class="col-md-12">
+    <div class="product-name d-flex">
+       <div class="one-forth text-left px-4"> -->
+        <!-- <span class="text-center d-mx-auto">Order Details</span>
+      </div> -->
+      <table class="table table-bordered table-responsive">
+        <tr>
+          <th>Sr.no</th>
+          <th> country</th>
+          <th>fname</th>
+          <th>lname</th>
+          <th>address</th>
+          <th>secondaddress</th>
+          <th>city</th>
+          <th>state</th>
+          <th>postalcode</th>
+          <th>email</th>
+          <th>mobileno</th>
+          <th>message</th>
+        </tr>
+        <tr *ngFor="let data of userdata; let i=index">
+          <td>{{i+1}}</td>
+          <td>{{data.country}}</td>
+          <td>{{data.fname}}</td>
+          <td>{{data.lname}}</td>
+          <td>{{data.address}}</td>
+          <td>{{data.secondaddress}}</td>
+          <td>{{data.city}}</td>
+          <td>{{data.state}}</td>
+          <td>{{data.postalcode}}</td>
+          <td>{{data.email}}</td>
+          <td>{{data.mobileno}}</td>
+          <td>{{data.message}}</td>
+        </tr>
+
